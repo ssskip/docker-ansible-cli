@@ -23,7 +23,7 @@ RUN apk add --no-cache \
 		gcc=6.4.0-r5 \		
 		make=4.2.1-r0 \
 	    && \
-	pip install --upgrade pip==9.0.3 && \
+	pip install --upgrade pip && \
 	pip install \
 		ansible==2.5.1 \
 		botocore==1.10.0 \
@@ -32,11 +32,3 @@ RUN apk add --no-cache \
 		pywinrm[kerberos]==0.3.0 \
 		&& \
 	apk del build-dependencies
-
-VOLUME ["/tmp/ansible-jobs"]
-
-WORKDIR /tmp/ansible-jobs
-
-ENTRYPOINT ["ansible-playbook"]
-
-CMD ["--version"]
