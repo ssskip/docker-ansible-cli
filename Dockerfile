@@ -1,6 +1,8 @@
 FROM alpine:3.7
 
 RUN apk add --no-cache \
+		rsync \
+		openssh \
 		bzip2=1.0.6-r6 \
 		file=5.32-r0 \
 		gzip=1.8-r0 \
